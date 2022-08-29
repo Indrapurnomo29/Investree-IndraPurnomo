@@ -140,7 +140,7 @@ In this scenario, user want to buy Bacpack in DemoSauce site. You can create fea
 
 ## Step definition
 
-Here's a Java code step with @Given, @When, @And, @And, @Then as below:
+Here's a Java code step with `@Given`, `@When`, `@And`, `@And`, `@Then` as below: 
 
 ```java
 public class StepCheckout {
