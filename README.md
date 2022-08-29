@@ -31,6 +31,13 @@ Feature: Shop for Backpack on the SauceDemo website
     And User selects Backpack product to add to cart in SauceDemo site
     And User entered information data in SauceDemo site
     Then User successfully and complete order Backpack in SauceDemo site
+    
+    Feature: Search by keyword
+
+  Scenario: Searching for a term
+    Given Sergey is researching things on the internet
+    When he looks up "Cucumber"
+    Then he should see information about "Cucumber"
 ```
 
 ## Step definition
