@@ -52,7 +52,7 @@ public class StepCheckout {
         Thread.sleep(2000);
     }
 ```    
-This is step user entered Username, Password, and Click Login
+This is step user entered Username, Password, and Click Login:
 
 ```java
    
@@ -67,7 +67,7 @@ This is step user entered Username, Password, and Click Login
         Thread.sleep(2000);
     }
 ```
-This is step user selects Backpack for ordered
+This is step user selects Backpack for ordered:
 
 ```java
     @And("User selects Backpack product to add to cart in SauceDemo site")
@@ -102,7 +102,7 @@ This is step user selects Backpack for ordered
         Thread.sleep(2000);
     }
 ```
-User entered First Name, Last Name, and Postal Code
+User entered First Name, Last Name, and Postal Code:
 
 ```java
     @And("User entered information data in SauceDemo site")
@@ -136,7 +136,7 @@ User entered First Name, Last Name, and Postal Code
         Thread.sleep(2000);
     }
 ```
-This is step user successfully and complete order Backpack
+This is step user successfully and complete order Backpack:
 
 ```java
     @Then("User successfully and complete order Backpack in SauceDemo site")
