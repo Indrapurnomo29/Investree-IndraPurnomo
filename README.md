@@ -22,7 +22,7 @@ You will need to download additional components to work with each of the major b
 
 In this scenario, user want to Bacpack in DemoSauce site:
 
-```Java
+```ruby
 Feature: Shop for Backpack on the SauceDemo website
 
   Scenario: User successfully shopping Backpack in the SauceDemo website
