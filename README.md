@@ -3,6 +3,7 @@
 ## Installation
 
 Selenium may be installed via npm with
+
 `npm install selenium-webdriver`
 
 You will need to download additional components to work with each of the major browsers.
