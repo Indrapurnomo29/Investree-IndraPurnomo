@@ -18,6 +18,17 @@ You will need to download additional components to work with each of the major b
 | Safari            | [safaridriver](https://developer.apple.com/library/archive/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28) |
 
 
-## How to Run
+## Scenario
+
+In this scenario, user want to Bacpack in DemoSauce site:
+
+Feature: Shop for Backpack on the SauceDemo website
+
+  Scenario: User successfully shopping Backpack in the SauceDemo website
+    Given Open the chrome and launch SauceDemo site
+    When Entered Username Password and Click button Login
+    And User selects Backpack product to add to cart in SauceDemo site
+    And User entered information data in SauceDemo site
+    Then User successfully and complete order Backpack in SauceDemo site
 
 - Clone this repository with command git clone `https://github.com/Indrapurnomo29/Investree-IndraPurnomo.git`
