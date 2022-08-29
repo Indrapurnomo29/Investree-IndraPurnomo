@@ -22,8 +22,7 @@ You will need to download additional components to work with each of the major b
 
 In this scenario, user want to buy Bacpack in DemoSauce site:
 
-```java
-Feature: Shop for Backpack on the SauceDemo website
+```java Feature: Shop for Backpack on the SauceDemo website
 
   Scenario: User successfully shopping Backpack in the SauceDemo website
     Given Open the chrome and launch SauceDemo site
