@@ -125,7 +125,7 @@ You also need to install a plugin Cucumber for Java and Gherkin and add dependen
 
 ## Scenario
 
-In this scenario, user want to buy Bacpack in DemoSauce site:
+In this scenario, user want to buy Bacpack in DemoSauce site. You can create feature class as below:
 
 ```java
     Feature: Shop for Backpack on the SauceDemo website
@@ -245,6 +245,8 @@ public class StepCheckout {
         WebElement ThankYouForYourOrder = driver.findElement(By.className("complete-header"));
         ThankYouForYourOrder.isDisplayed();
         Assert.assertTrue(driver.findElement(By.className("complete-header")).isDisplayed());
+        driver.close();
+        driver.quit();
     }
 }
 
@@ -279,7 +281,17 @@ public class Checkout {
 
 ![mvn-verify](https://user-images.githubusercontent.com/65549993/187225806-b5ac7d36-4e91-4999-9994-f57c7ccfb192.jpg)
 
-- You 
+- Open directory target and open this file with Open In -> Browser -> Chrome as below:
+
+![target](https://user-images.githubusercontent.com/65549993/187229374-68ce778b-19bc-417e-bdfd-0e667ef9197f.jpg)
+
+- Then you will get the results of the report as below:
+
+![result-report](https://user-images.githubusercontent.com/65549993/187229524-033d14ae-8966-48d0-b31a-7eaa12e48da8.jpg)
+
+## Thank you
+
+
 
 
 
