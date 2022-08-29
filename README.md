@@ -35,6 +35,8 @@ Feature: Shop for Backpack on the SauceDemo website
 
 ## Step definition
 
+This is step user open the chrome and launch SauceDemo website:
+
 ```java
 public class StepCheckout {
 
@@ -49,9 +51,13 @@ public class StepCheckout {
         driver.get("https://www.saucedemo.com/");
         Thread.sleep(2000);
     }
+```    
+This is step user entered Username, Password, and Click Login
 
-    @When("Entered Username Password and Click button Login")
-    public void enteredUsernamePasswordAndClickButtonLogin() throws Throwable {
+```java
+   
+   @When("Entered Username Password and Click button Login")
+   public void enteredUsernamePasswordAndClickButtonLogin() throws Throwable {
 //        System.out.println("This is step user entered Username, Password, and Click Login");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         Thread.sleep(1000);
@@ -60,7 +66,10 @@ public class StepCheckout {
         driver.findElement(By.id("login-button")).click();
         Thread.sleep(2000);
     }
+```
+This is step user selects Backpack for ordered
 
+```java
     @And("User selects Backpack product to add to cart in SauceDemo site")
     public void userSelectsBackpackProductToAddToCartInSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user selects Backpack for ordered");
@@ -92,7 +101,10 @@ public class StepCheckout {
         driver.findElement(By.id("checkout")).click();
         Thread.sleep(2000);
     }
+```
+User entered First Name, Last Name, and Postal Code
 
+```java
     @And("User entered information data in SauceDemo site")
     public void userEnteredInformationDataInSauceDemoSite() throws Throwable {
 //        System.out.println("User entered First Name, Last Name, and Postal Code");
@@ -123,7 +135,10 @@ public class StepCheckout {
         driver.findElement(By.id("finish")).click();
         Thread.sleep(2000);
     }
+```
+This is step user successfully and complete order Backpack
 
+```java
     @Then("User successfully and complete order Backpack in SauceDemo site")
     public void userSuccessfullyAndCompleteOrderBackpackInSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user successfully and complete order Backpack");
