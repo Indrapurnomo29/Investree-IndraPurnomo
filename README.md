@@ -17,6 +17,111 @@ You will need to download additional components to work with each of the major b
 | Opera             | [operadriver(.exe)](https://github.com/operasoftware/operachromiumdriver/releases)                                                               |
 | Safari            | [safaridriver](https://developer.apple.com/library/archive/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28) |
 
+You also need to install a plugin Cucumber for Java and Gherkin and add dependency at pom.xml as below:
+
+```java
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Investree-IndraPurnomo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>7.3.4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>7.3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>23.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>2.8.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>automation-bdd-google</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
 
 ## Scenario
 
@@ -35,7 +140,7 @@ In this scenario, user want to buy Bacpack in DemoSauce site:
 
 ## Step definition
 
-This is step user open the chrome and launch SauceDemo website:
+Here's a Java code step with @Given, @When, @And, @And, @Then as below:
 
 ```java
 public class StepCheckout {
@@ -51,11 +156,7 @@ public class StepCheckout {
         driver.get("https://www.saucedemo.com/");
         Thread.sleep(2000);
     }
-```    
-This is step user entered Username, Password, and Click Login:
 
-```java
-   
    @When("Entered Username Password and Click button Login")
    public void enteredUsernamePasswordAndClickButtonLogin() throws Throwable {
 //        System.out.println("This is step user entered Username, Password, and Click Login");
@@ -66,12 +167,9 @@ This is step user entered Username, Password, and Click Login:
         driver.findElement(By.id("login-button")).click();
         Thread.sleep(2000);
     }
-```
-This is step user selects Backpack for ordered:
 
-```java
-    @And("User selects Backpack product to add to cart in SauceDemo site")
-    public void userSelectsBackpackProductToAddToCartInSauceDemoSite() throws Throwable {
+   @And("User selects Backpack product to add to cart in SauceDemo site")
+   public void userSelectsBackpackProductToAddToCartInSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user selects Backpack for ordered");
         String urlRedirect = driver.getCurrentUrl();
         String urlExpected = "https://www.saucedemo.com/inventory.html";
@@ -101,12 +199,9 @@ This is step user selects Backpack for ordered:
         driver.findElement(By.id("checkout")).click();
         Thread.sleep(2000);
     }
-```
-User entered First Name, Last Name, and Postal Code:
-
-```java
-    @And("User entered information data in SauceDemo site")
-    public void userEnteredInformationDataInSauceDemoSite() throws Throwable {
+    
+   @And("User entered information data in SauceDemo site")
+   public void userEnteredInformationDataInSauceDemoSite() throws Throwable {
 //        System.out.println("User entered First Name, Last Name, and Postal Code");
         String urlStepOne = driver.getCurrentUrl();
         String urlStepOne_expected = "https://www.saucedemo.com/checkout-step-one.html";
@@ -135,12 +230,9 @@ User entered First Name, Last Name, and Postal Code:
         driver.findElement(By.id("finish")).click();
         Thread.sleep(2000);
     }
-```
-This is step user successfully and complete order Backpack:
 
-```java
-    @Then("User successfully and complete order Backpack in SauceDemo site")
-    public void userSuccessfullyAndCompleteOrderBackpackInSauceDemoSite() throws Throwable {
+   @Then("User successfully and complete order Backpack in SauceDemo site")
+   public void userSuccessfullyAndCompleteOrderBackpackInSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user successfully and complete order Backpack");
         String urlComplete = driver.getCurrentUrl();
         String urlComplete_expected = "https://www.saucedemo.com/checkout-complete.html";
@@ -160,7 +252,13 @@ This is step user successfully and complete order Backpack:
 
 ## Executing the tests
 
-To run this project, you can just run the test runner class:
+To run this project, you can just run test with the feature class as below:
+
+![run-scenario](https://user-images.githubusercontent.com/65549993/187221590-c1dc5e3d-5671-4ea1-afa1-223112b2cc69.jpg)
+
+## Report
+
+- Create java class "TestRunner" in Directory TestRunner and you can use this code by copy as below:
 
 ```java
 @RunWith(Cucumber.class)
@@ -172,5 +270,16 @@ To run this project, you can just run the test runner class:
 public class Checkout {
 }
 ```
+- Open a terminal on Intellij, then type `mvn test`, it will be automatic running test and result as below:
 
-- Clone this repository with command git clone `https://github.com/Indrapurnomo29/Investree-IndraPurnomo.git`
+![mvn-test](https://user-images.githubusercontent.com/65549993/187225531-1d704cd1-5c56-40b9-bdb7-f5ccb992a4ae.jpg)
+![mvn-test-1](https://user-images.githubusercontent.com/65549993/187225601-76ed3ba7-cbd5-4f9b-8b3b-c0de5dbff9bb.jpg)
+
+- And type `mvn verify -DskipTests` for generate test report as below:
+
+![mvn-verify](https://user-images.githubusercontent.com/65549993/187225806-b5ac7d36-4e91-4999-9994-f57c7ccfb192.jpg)
+
+- You 
+
+
+
