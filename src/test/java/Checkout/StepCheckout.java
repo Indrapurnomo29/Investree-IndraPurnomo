@@ -14,8 +14,8 @@ public class StepCheckout {
 
     WebDriver driver;
 
-    @Given("^Open the chrome and launch SauceDemo website$")
-    public void Open_the_chrome_and_launch_SauceDemo_website() throws Throwable {
+    @Given("Open the chrome and launch SauceDemo site")
+    public void openTheChromeAndLaunchSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user open the chrome and launch SauceDemo website");
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
@@ -24,8 +24,8 @@ public class StepCheckout {
         Thread.sleep(2000);
     }
 
-    @When("^Entered Username Password and Click Login$")
-    public void  Entered_Username_Password_and_Click_Login() throws Throwable {
+    @When("Entered Username Password and Click button Login")
+    public void enteredUsernamePasswordAndClickButtonLogin() throws Throwable {
 //        System.out.println("This is step user entered Username, Password, and Click Login");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         Thread.sleep(1000);
@@ -35,8 +35,8 @@ public class StepCheckout {
         Thread.sleep(2000);
     }
 
-    @And("^User selects Backpack product to add to cart$")
-    public void User_selects_Backpack_product_to_add_to_cart() throws Throwable {
+    @And("User selects Backpack product to add to cart in SauceDemo site")
+    public void userSelectsBackpackProductToAddToCartInSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user selects Backpack for ordered");
         String urlRedirect = driver.getCurrentUrl();
         String urlExpected = "https://www.saucedemo.com/inventory.html";
@@ -67,8 +67,8 @@ public class StepCheckout {
         Thread.sleep(2000);
     }
 
-    @And("^User entered information data$")
-    public void User_entered_information_data() throws Throwable {
+    @And("User entered information data in SauceDemo site")
+    public void userEnteredInformationDataInSauceDemoSite() throws Throwable {
 //        System.out.println("User entered First Name, Last Name, and Postal Code");
         String urlStepOne = driver.getCurrentUrl();
         String urlStepOne_expected = "https://www.saucedemo.com/checkout-step-one.html";
@@ -98,8 +98,8 @@ public class StepCheckout {
         Thread.sleep(2000);
     }
 
-    @Then("^User successfully and complete order Backpack$")
-    public void User_successfully_and_complete_order_Backpack() throws Throwable {
+    @Then("User successfully and complete order Backpack in SauceDemo site")
+    public void userSuccessfullyAndCompleteOrderBackpackInSauceDemoSite() throws Throwable {
 //        System.out.println("This is step user successfully and complete order Backpack");
         String urlComplete = driver.getCurrentUrl();
         String urlComplete_expected = "https://www.saucedemo.com/checkout-complete.html";
@@ -112,5 +112,7 @@ public class StepCheckout {
         WebElement ThankYouForYourOrder = driver.findElement(By.className("complete-header"));
         ThankYouForYourOrder.isDisplayed();
         Assert.assertTrue(driver.findElement(By.className("complete-header")).isDisplayed());
+        driver.close();
+        driver.quit();
     }
 }
