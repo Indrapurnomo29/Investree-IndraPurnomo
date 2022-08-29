@@ -2,11 +2,11 @@
 
 ## Installation
 
-Selenium may be installed via npm with
+- Selenium may be installed via npm with
 
 `npm install selenium-webdriver`
 
-You will need to download additional components to work with each of the major browsers.
+- You will need to download additional components to work with each of the major browsers.
 
 | Browser           | Component                                                                                                                                        |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -17,7 +17,7 @@ You will need to download additional components to work with each of the major b
 | Opera             | [operadriver(.exe)](https://github.com/operasoftware/operachromiumdriver/releases)                                                               |
 | Safari            | [safaridriver](https://developer.apple.com/library/archive/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28) |
 
-You also need to install a plugin Cucumber for Java and Gherkin and add dependency at pom.xml as below:
+- You also need to install a plugin Cucumber for Java and Gherkin and add dependency at pom.xml as below:
 
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
@@ -272,7 +272,7 @@ To run this project, you can just run test with the feature class as below:
 public class Checkout {
 }
 ```
-- Open a terminal on Intellij, then type `mvn test`, it will be automatic running test and result as below:
+- Open a terminal on IntelliJ, then type `mvn test`, it will be automatic running test and result as below:
 
 ![mvn-test](https://user-images.githubusercontent.com/65549993/187225531-1d704cd1-5c56-40b9-bdb7-f5ccb992a4ae.jpg)
 ![mvn-test-1](https://user-images.githubusercontent.com/65549993/187225601-76ed3ba7-cbd5-4f9b-8b3b-c0de5dbff9bb.jpg)
