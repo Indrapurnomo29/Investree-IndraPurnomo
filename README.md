@@ -20,9 +20,9 @@ You will need to download additional components to work with each of the major b
 
 ## Scenario
 
-In this scenario, user want to Bacpack in DemoSauce site:
+In this scenario, user want to buy Bacpack in DemoSauce site:
 
-```ruby
+```javascript
 Feature: Shop for Backpack on the SauceDemo website
 
   Scenario: User successfully shopping Backpack in the SauceDemo website
