@@ -110,7 +110,7 @@ You also need to install a plugin Cucumber for Java and Gherkin and add dependen
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>automation-bdd-google</projectName>
+                            <projectName>Investree-IndraPurnomo</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
                         </configuration>
